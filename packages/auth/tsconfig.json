@@ -1,0 +1,12 @@
+{
+  "extends": "ts-config-single-spa",
+  "files": ["src/francisco-auth.ts"],
+  "compilerOptions": {
+    "declarationDir": "dist",
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

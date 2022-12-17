@@ -1,0 +1,14 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "dist",
+    "paths": {
+      "@francisco/*": ["../*"]
+    }
+  },
+  "references": [{ "path": "../auth" }, { "path": "../ui" }],
+  "files": ["src/francisco-app-b.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

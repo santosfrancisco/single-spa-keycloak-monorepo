@@ -1,0 +1,14 @@
+{
+  "extends": "ts-config-single-spa",
+  "files": ["src/francisco-ui.tsx"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "dist",
+    "composite": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

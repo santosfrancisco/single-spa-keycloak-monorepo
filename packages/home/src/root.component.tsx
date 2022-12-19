@@ -1,8 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
+import { Router } from "@francisco/commons";
 import { Button } from "@francisco/ui";
 import { navigateToUrl } from "single-spa";
 import * as SC from "./styles";
+
+const { BrowserRouter, Route, Switch, useLocation } = Router;
 
 const useQuery = () => {
   const { search } = useLocation();

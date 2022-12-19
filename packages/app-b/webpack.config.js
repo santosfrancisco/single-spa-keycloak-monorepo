@@ -25,6 +25,6 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
-    externals: ["styled-components", "@francisco/auth", "@francisco/ui"],
+    externals: ["styled-components"],
   });
 };

@@ -7,8 +7,12 @@
       "@francisco/*": ["../*"]
     }
   },
-  "references": [{ "path": "../auth" }, { "path": "../ui" }],
+  "references": [
+    { "path": "../auth" },
+    { "path": "../ui" },
+    { "path": "../commons" }
+  ],
   "files": ["src/francisco-app-a.tsx"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../ui/dist"],
   "exclude": ["src/**/*.test*"]
 }

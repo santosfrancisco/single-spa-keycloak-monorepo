@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/commons" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/auth" }
+  ]
+}

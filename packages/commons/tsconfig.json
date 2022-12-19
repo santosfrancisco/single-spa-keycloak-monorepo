@@ -1,18 +1,18 @@
 {
   "extends": "ts-config-single-spa",
+  "files": ["src/francisco-commons.tsx"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "declarationDir": "dist",
+    "composite": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
     "paths": {
       "@francisco/*": ["../*"]
     }
   },
-  "references": [
-    { "path": "../auth" },
-    { "path": "../ui" },
-    { "path": "../commons" }
-  ],
-  "files": ["src/francisco-app-b.tsx"],
+  "references": [{ "path": "../auth" }, { "path": "../ui" }],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test*"]
 }

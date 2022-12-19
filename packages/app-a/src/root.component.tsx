@@ -1,6 +1,8 @@
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { Router } from "@francisco/commons";
 import { Button } from "@francisco/ui";
 import * as SC from "./styles";
+
+const { BrowserRouter, Switch, Route, Link } = Router;
 
 const Root = (props) => {
   return (
@@ -24,6 +26,7 @@ const Root = (props) => {
         <Route
           exact
           path="/route-b"
+          roles={["app-a-view"]}
           component={({ history }) => (
             <>
               <SC.Wrapper>

@@ -4,7 +4,7 @@ const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "francisco",
-    projectName: "app-a",
+    projectName: "commons",
     webpackConfigEnv,
     argv,
   });
@@ -15,7 +15,7 @@ module.exports = (webpackConfigEnv, argv) => {
       rules: [
         {
           test: /\.tsx?$/,
-          exclude: /node_modules/,
+          exclude: [/node_modules/],
           use: {
             loader: "ts-loader",
             options: {

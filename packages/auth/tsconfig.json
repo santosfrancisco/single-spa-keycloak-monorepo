@@ -3,6 +3,7 @@
   "files": ["src/francisco-auth.ts"],
   "compilerOptions": {
     "declarationDir": "dist",
+    "declarationMap": true,
     "composite": true,
     "outDir": "dist",
     "rootDir": "src"

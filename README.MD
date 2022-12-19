@@ -16,6 +16,7 @@ Poc de monorepo com Single-spa + Keycloak
 - Clone o projeto
 - Instale as dependências `yarn install`
 - Na raiz do projeto execute o bootstrap `yarn bootstrap`. Isso irá instalar as dependências de cada package
+- Rode `yarn build`
 - Agora execute `yarn start` e o projeto root estará rodando na porta [http://localhost:9090]([http://localhost:9090]).
 
 ## TODO

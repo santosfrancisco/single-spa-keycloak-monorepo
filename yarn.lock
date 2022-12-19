@@ -1081,6 +1081,7 @@
 
 "@francisco/app-a@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/app-a":
   "resolved" "file:packages/app-a"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/react" "^17.0.19"
@@ -1099,6 +1100,7 @@
 
 "@francisco/app-b@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/app-b":
   "resolved" "file:packages/app-b"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/react" "^17.0.19"
@@ -1116,6 +1118,7 @@
 
 "@francisco/auth@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/auth":
   "resolved" "file:packages/auth"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/systemjs" "^6.1.1"
@@ -1124,8 +1127,25 @@
     "single-spa" "^5.9.3"
     "ts-loader" "^9.4.2"
 
+"@francisco/commons@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/commons":
+  "resolved" "file:packages/commons"
+  dependencies:
+    "@types/jest" "^27.0.1"
+    "@types/react" "^17.0.19"
+    "@types/react-dom" "^17.0.9"
+    "@types/react-router-dom" "^5.3.3"
+    "@types/systemjs" "^6.1.1"
+    "@types/webpack-env" "^1.16.2"
+    "react" "^17.0.2"
+    "react-dom" "^17.0.2"
+    "react-router-dom" "5.2.0"
+    "single-spa" "^5.9.3"
+    "single-spa-react" "^4.3.1"
+    "ts-loader" "^9.4.2"
+
 "@francisco/home@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/home":
   "resolved" "file:packages/home"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/react" "^17.0.19"
@@ -1142,6 +1162,7 @@
 
 "@francisco/menu@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/menu":
   "resolved" "file:packages/menu"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/react" "^17.0.19"
@@ -1158,6 +1179,7 @@
 
 "@francisco/root-config@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/root-config":
   "resolved" "file:packages/root-config"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/systemjs" "^6.1.1"
@@ -1168,6 +1190,7 @@
 
 "@francisco/ui@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/ui":
   "resolved" "file:packages/ui"
+  "version" "0.0.1"
   dependencies:
     "@types/jest" "^27.0.1"
     "@types/react" "^17.0.19"
@@ -4132,6 +4155,21 @@
     "tree-kill" "^1.2.2"
     "yargs" "^16.2.0"
 
+"concurrently@^7.6.0":
+  "integrity" "sha512-BKtRgvcJGeZ4XttiDiNcFiRlxoAeZOseqUvyYRUp/Vtd+9p1ULmeoSqGsDA+2ivdeDFpqrJvGvmI+StKfKl5hw=="
+  "resolved" "https://registry.npmjs.org/concurrently/-/concurrently-7.6.0.tgz"
+  "version" "7.6.0"
+  dependencies:
+    "chalk" "^4.1.0"
+    "date-fns" "^2.29.1"
+    "lodash" "^4.17.21"
+    "rxjs" "^7.0.0"
+    "shell-quote" "^1.7.3"
+    "spawn-command" "^0.0.2-1"
+    "supports-color" "^8.1.0"
+    "tree-kill" "^1.2.2"
+    "yargs" "^17.3.1"
+
 "config-chain@^1.1.12":
   "integrity" "sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ=="
   "resolved" "https://registry.npmjs.org/config-chain/-/config-chain-1.1.13.tgz"
@@ -4416,7 +4454,7 @@
     "whatwg-mimetype" "^2.3.0"
     "whatwg-url" "^8.0.0"
 
-"date-fns@^2.16.1":
+"date-fns@^2.16.1", "date-fns@^2.29.1":
   "integrity" "sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA=="
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
   "version" "2.29.3"
@@ -9082,7 +9120,7 @@
   dependencies:
     "tslib" "^1.9.0"
 
-"rxjs@^7.5.5":
+"rxjs@^7.0.0", "rxjs@^7.5.5":
   "integrity" "sha512-DDa7d8TFNUalGC9VqXvQ1euWNN7sc63TrUCuM9J998+ViviahMIjKSOU7rfcgFOF+FCD71BhDRv4hrFz+ImDLQ=="
   "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.6.0.tgz"
   "version" "7.6.0"
@@ -9344,6 +9382,11 @@
   "integrity" "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="
   "resolved" "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   "version" "3.0.0"
+
+"shell-quote@^1.7.3":
+  "integrity" "sha512-8o/QEhSSRb1a5i7TFR0iM4G16Z0vYB2OQVs4G3aAFXjn3T6yEx8AZxy1PgDF7I00LZHYA3WxaSYIf5e5sAX8Rw=="
+  "resolved" "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.4.tgz"
+  "version" "1.7.4"
 
 "side-channel@^1.0.4":
   "integrity" "sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw=="
@@ -10095,7 +10138,7 @@
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
-"typescript@*", "typescript@^3 || ^4", "typescript@^4.1.2", "typescript@^4.3.5", "typescript@>= 2.7":
+"typescript@*", "typescript@^3 || ^4", "typescript@^4.1.2", "typescript@^4.3.5", "typescript@^4.9.4", "typescript@>= 2.7":
   "integrity" "sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.9.4.tgz"
   "version" "4.9.4"
@@ -10768,6 +10811,19 @@
     "string-width" "^4.2.0"
     "y18n" "^5.0.5"
     "yargs-parser" "^20.2.2"
+
+"yargs@^17.3.1":
+  "integrity" "sha512-1/9UrdHjDZc0eOU0HxOHoS78C69UD3JRMvzlJ7S79S2nTaWRA/whGCTV8o9e/N/1Va9YIV7Q4sOxD8VV4pCWOw=="
+  "resolved" "https://registry.npmjs.org/yargs/-/yargs-17.6.2.tgz"
+  "version" "17.6.2"
+  dependencies:
+    "cliui" "^8.0.1"
+    "escalade" "^3.1.1"
+    "get-caller-file" "^2.0.5"
+    "require-directory" "^2.1.1"
+    "string-width" "^4.2.3"
+    "y18n" "^5.0.5"
+    "yargs-parser" "^21.1.1"
 
 "yargs@^17.6.2":
   "integrity" "sha512-1/9UrdHjDZc0eOU0HxOHoS78C69UD3JRMvzlJ7S79S2nTaWRA/whGCTV8o9e/N/1Va9YIV7Q4sOxD8VV4pCWOw=="

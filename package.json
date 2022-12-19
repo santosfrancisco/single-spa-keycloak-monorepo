@@ -6,12 +6,15 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
-    "coverage": "lerna run coverage"
+    "coverage": "lerna run coverage",
+    "watch": "tsc -b ./tsconfig.watch.json --watch"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "6.0.1"
+    "lerna": "6.0.1",
+    "typescript": "^4.9.4",
+    "concurrently": "^7.6.0"
   }
 }

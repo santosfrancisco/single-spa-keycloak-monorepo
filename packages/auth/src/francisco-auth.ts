@@ -1,5 +1,4 @@
 import Keycloak from "keycloak-js";
-import { navigateToUrl } from "single-spa";
 
 const _kc = new Keycloak({
   url: "http://localhost:8080/",
@@ -12,7 +11,7 @@ const _kc = new Keycloak({
  *
  * @param onAuthenticatedCallback
  */
-const initKeycloak = (onAuthenticatedCallback) => {
+const initKeycloak = (onAuthenticatedCallback: () => any) => {
   _kc
     .init({
       onLoad: "check-sso",
@@ -29,57 +28,67 @@ const initKeycloak = (onAuthenticatedCallback) => {
         console.log("user is authenticated..!");
       }
     })
-    .catch((e) => console.error("Faiô: ", e));
+    .catch((error) => console.error("Error starting keycloak: ", error));
 };
+
 /**
- * Faz login
+ * Redirects to login form.
+ * @param options Login options.
  */
 const doLogin = _kc.login;
 
+/**
+ * Redirects to logout.
+ * @param options Logout options.
+ */
 const doLogout = _kc.logout;
 
+/**
+ * @returns The base64 encoded token that can be sent in the Authorization header in
+ * requests to services.
+ */
 const getToken = () => _kc.token;
 
+/**
+ *
+ * @returns true if user is logged in (has token)
+ */
 const isLoggedIn = () => !!_kc.token;
 
 const updateToken = (successCallback) =>
   _kc.updateToken(5).then(successCallback).catch(doLogin);
 
+/**
+ * @returns The preferred_username from user token
+ */
 const getUsername = () => _kc.tokenParsed?.preferred_username;
 
-const getParsedToken = () => _kc.tokenParsed;
+/**
+ * Returns true if the token has at least one of the given roles.
+ * @param role A realm role name.
+ */
+const hasRealmRole = (roles: string[]) =>
+  roles.some((role) => _kc.hasRealmRole(role));
 
-const hasRole = (roles) => roles.some((role) => _kc.hasRealmRole(role));
+/**
+ * Returns true if the token has at least one of the given roles for the resource.
+ * @param roles An array of role name.
+ * @param resource If not specified, `clientId` is used.
+ */
+const hasResourceRole = (roles: string[], resource?: string) =>
+  roles.some((role) => _kc.hasResourceRole(role, resource));
 
-// validate authentication when single-spa navigate
+// listener that validate authentication when single-spa navigate
 window.addEventListener("single-spa:before-routing-event", (evt) => {
-  const {
-    oldUrl,
-    newUrl,
-    // @ts-ignore
-  } = evt.detail;
-
   if (isLoggedIn()) {
-    const cb = (refreshed) => {
+    const callback = (refreshed) => {
       if (refreshed) {
         console.log("Token was successfully refreshed");
       } else {
         console.log("Token is still valid");
       }
     };
-    if (
-      newUrl.split(":9090")[1].startsWith("/app-b") &&
-      !hasRole(["app-b-view"])
-    ) {
-      return navigateToUrl(`/not-authorized/?url=${newUrl}`);
-    }
-    if (
-      newUrl.split(":9090")[1].startsWith("/app-a") &&
-      !hasRole(["app-a-view"])
-    ) {
-      return navigateToUrl(`/not-authorized/?url=${newUrl}`);
-    }
-    return updateToken(cb);
+    return updateToken(callback);
   }
   console.log("User is not logged in");
   return doLogin();
@@ -93,6 +102,6 @@ export {
   getToken,
   updateToken,
   getUsername,
-  hasRole,
-  getParsedToken,
+  hasRealmRole,
+  hasResourceRole,
 };

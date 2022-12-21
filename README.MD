@@ -16,8 +16,8 @@ Poc de monorepo com Single-spa + Keycloak
 - Clone o projeto
 - Instale as dependências `yarn install`
 - Na raiz do projeto execute o bootstrap `yarn bootstrap`. Isso irá instalar as dependências de cada package
-- Rode `yarn build`
 - Agora execute `yarn start` e o projeto root estará rodando na porta [http://localhost:9090]([http://localhost:9090]).
+- E execute `yarn watch` em uma outra aba de terminal. Esse comando executa o typescript em modo watch para que as alterações nos pacotes `commons`, `ui` e `auth` sejam refletidas paras os microfrontends que os utilizam como dependências
 
 ## TODO
 

@@ -20,6 +20,7 @@ module.exports = (webpackConfigEnv, argv) => {
             loader: "ts-loader",
             options: {
               projectReferences: true,
+              transpileOnly: true,
             },
           },
         },

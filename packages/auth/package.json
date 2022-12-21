@@ -32,12 +32,14 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-ts-important-stuff": "^1.1.0",
     "eslint-plugin-prettier": "^3.4.1",
+    "fork-ts-checker-webpack-plugin": "^7.2.14",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
     "jest-cli": "^27.0.6",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
     "ts-config-single-spa": "^3.0.0",
+    "ts-loader": "^9.4.2",
     "typescript": "^4.3.5",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
@@ -50,8 +52,7 @@
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
     "keycloak-js": "^20.0.2",
-    "single-spa": "^5.9.3",
-    "ts-loader": "^9.4.2"
+    "single-spa": "^5.9.3"
   },
   "types": "dist/francisco-auth.d.ts"
 }

@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge");
 const path = require("path");
 const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -27,6 +28,14 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
+    plugins: [
+      new ForkTsCheckerWebpackPlugin({
+        typescript: {
+          build: true,
+          mode: "write-references",
+        },
+      }),
+    ],
     externals: ["styled-components", "@francisco/auth"],
   });
 };

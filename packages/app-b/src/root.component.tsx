@@ -11,7 +11,7 @@ const Root = (props) => {
         <Route
           exact
           path="/route-a"
-          roles={["app-b-view"]}
+          roles={["app-b-route-a-view"]}
           component={({ history }) => (
             <>
               <SC.Wrapper>
@@ -27,7 +27,7 @@ const Root = (props) => {
         <Route
           exact
           path="/route-b"
-          roles={["app-b-view"]}
+          roles={["app-b-route-b-view"]}
           component={({ history }) => (
             <>
               <SC.Wrapper>
@@ -38,6 +38,15 @@ const Root = (props) => {
               </SC.Wrapper>
               <Link to="/route-a">Go to /route-a</Link>
             </>
+          )}
+        />
+        <Route
+          path="*"
+          component={(props) => (
+            <div>
+              <h1>404 - Not found</h1>
+              <p>{props.location.pathname}</p>
+            </div>
           )}
         />
       </Switch>

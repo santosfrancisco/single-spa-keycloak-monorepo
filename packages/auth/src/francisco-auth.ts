@@ -78,6 +78,19 @@ const hasRealmRole = (roles: string[]) =>
 const hasResourceRole = (roles: string[], resource?: string) =>
   roles.some((role) => _kc.hasResourceRole(role, resource));
 
+/**
+ * Returns true if the token has at least one of the roles provided for the domain or resource.
+ * @param roles An array of role name.
+ * @param resource If not specified, `clientId` is used.
+ */
+const hasRole = (roles: string[], resource?: string) => {
+  return roles.some((r) => {
+    const realmRoles = _kc.hasRealmRole(r);
+    const resourceRoles = _kc.hasResourceRole(r, resource);
+    return realmRoles || resourceRoles;
+  });
+};
+
 // listener that validate authentication when single-spa navigate
 window.addEventListener("single-spa:before-routing-event", (evt) => {
   if (isLoggedIn()) {
@@ -102,6 +115,7 @@ export {
   getToken,
   updateToken,
   getUsername,
+  hasRole,
   hasRealmRole,
   hasResourceRole,
 };

@@ -1,4 +1,5 @@
 import { hasRealmRole } from "@francisco/auth";
+import { icons } from "@francisco/ui";
 import { List } from "@francisco/ui";
 
 import { MenuItem } from "./MenuItem";
@@ -8,6 +9,7 @@ const itemHome = {
   beautyName: "Home",
   routerLink: "/",
   name: "home",
+  Icon: icons.FiHome,
   pk: "home",
   roles: ["default-roles-myrealm"],
 };

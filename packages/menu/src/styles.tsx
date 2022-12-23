@@ -10,3 +10,9 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
+export const LogoutWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;

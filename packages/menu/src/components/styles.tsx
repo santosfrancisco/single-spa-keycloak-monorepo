@@ -7,7 +7,7 @@ export const MenuItem = styled.a<{ selected?: boolean }>`
   align-items: center;
   justify-content: space-between;
   border-radius: ${tokens.roundedCorners.radius_full};
-  padding: 8px;
+  padding: 8px 16px;
   margin: 4px 8px;
 
   color: ${tokens.colors.white};

@@ -1096,7 +1096,6 @@
     "single-spa" "^5.9.3"
     "single-spa-react" "^4.3.1"
     "styled-components" "^5.3.6"
-    "ts-loader" "^9.4.2"
 
 "@francisco/app-b@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/app-b":
   "resolved" "file:packages/app-b"
@@ -1114,7 +1113,6 @@
     "single-spa" "^5.9.3"
     "single-spa-react" "^4.3.1"
     "styled-components" "^5.3.6"
-    "ts-loader" "^9.4.2"
 
 "@francisco/auth@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/auth":
   "resolved" "file:packages/auth"
@@ -1125,7 +1123,6 @@
     "@types/webpack-env" "^1.16.2"
     "keycloak-js" "^20.0.2"
     "single-spa" "^5.9.3"
-    "ts-loader" "^9.4.2"
 
 "@francisco/commons@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/commons":
   "resolved" "file:packages/commons"
@@ -1141,7 +1138,6 @@
     "react-router-dom" "5.2.0"
     "single-spa" "^5.9.3"
     "single-spa-react" "^4.3.1"
-    "ts-loader" "^9.4.2"
 
 "@francisco/home@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/home":
   "resolved" "file:packages/home"
@@ -1158,7 +1154,6 @@
     "react-router-dom" "5.2.0"
     "single-spa" "^5.9.3"
     "single-spa-react" "^4.3.1"
-    "ts-loader" "^9.4.2"
 
 "@francisco/menu@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/menu":
   "resolved" "file:packages/menu"
@@ -1175,7 +1170,6 @@
     "single-spa" "^5.9.3"
     "single-spa-react" "^4.3.1"
     "styled-components" "^5.3.6"
-    "ts-loader" "^9.4.2"
 
 "@francisco/root-config@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/root-config":
   "resolved" "file:packages/root-config"
@@ -1186,7 +1180,6 @@
     "@types/webpack-env" "^1.16.2"
     "single-spa" "^5.9.3"
     "single-spa-layout" "^1.6.0"
-    "ts-loader" "^9.4.2"
 
 "@francisco/ui@file:/Users/60003662/www/single-spa-keycloak-monorepo/packages/ui":
   "resolved" "file:packages/ui"
@@ -1203,7 +1196,6 @@
     "single-spa" "^5.9.3"
     "single-spa-react" "^4.3.1"
     "styled-components" "^5.3.6"
-    "ts-loader" "^9.4.2"
 
 "@gar/promisify@^1.1.3":
   "integrity" "sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw=="
@@ -8768,6 +8760,11 @@
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
     "scheduler" "^0.20.2"
+
+"react-icons@^4.7.1":
+  "integrity" "sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.7.1.tgz"
+  "version" "4.7.1"
 
 "react-is@^16.13.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="

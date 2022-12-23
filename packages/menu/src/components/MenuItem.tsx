@@ -1,19 +1,24 @@
 import React from "react";
 import { navigateToUrl } from "single-spa";
-import { List } from "@francisco/ui";
-import { useMenuContext } from "../contexts/menu";
-import * as SC from "./styles";
-import { MenuItemType } from "./Menu";
+import { List, icons } from "@francisco/ui";
 import { hasRealmRole } from "@francisco/auth";
+import { useMenuContext } from "../contexts/menu";
+import { MenuItemType } from "./Menu";
+import * as SC from "./styles";
+
+const { FiChevronDown, FiChevronRight } = icons;
 
 export const MenuItem = ({ item }) => {
-  const { isExpanded, toggleMenu, category, setCategory, active } =
-    useMenuContext();
+  const { Icon } = item;
+  const { category, setCategory, active } = useMenuContext();
   const [openSub, setOpenSub] = React.useState(false);
 
   React.useEffect(() => {
     if (active) {
-      setOpenSub(active.split("/")[1]?.startsWith(item.pk));
+      if (active.startsWith(`/${item.pk}`)) {
+        setOpenSub(true);
+        setCategory(item.pk);
+      }
     }
   }, [active]);
 
@@ -23,7 +28,6 @@ export const MenuItem = ({ item }) => {
 
   const handleOpenSub = () => {
     setCategory(item.pk);
-    !isExpanded && toggleMenu();
   };
 
   const handleNavigate = (item) => {
@@ -44,8 +48,16 @@ export const MenuItem = ({ item }) => {
     <>
       <SC.MenuItem selected={!item.pk && active === item.routerLink} {...attrs}>
         <SC.ItemContainer>
-          {isExpanded && <SC.ItemTitle>{item.beautyName}</SC.ItemTitle>}
+          {Icon ? <Icon /> : null}
+          <SC.ItemTitle>{item.beautyName}</SC.ItemTitle>
         </SC.ItemContainer>
+        {item.subItens ? (
+          openSub ? (
+            <FiChevronDown />
+          ) : (
+            <FiChevronRight />
+          )
+        ) : null}
       </SC.MenuItem>
 
       {item.subItens?.length > 0 && openSub && (

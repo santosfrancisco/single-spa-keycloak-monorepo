@@ -51,9 +51,9 @@ const getToken = () => _kc.token;
 
 /**
  *
- * @returns true if user is logged in (has token)
+ * @returns true if user is logged in
  */
-const isLoggedIn = () => !!_kc.token;
+const isLoggedIn = () => !!_kc.authenticated;
 
 const updateToken = (successCallback) =>
   _kc.updateToken(5).then(successCallback).catch(doLogin);
@@ -83,8 +83,21 @@ const hasResourceRole = (roles: string[], resource?: string) =>
  * @param roles An array of role name.
  * @param resource If not specified, `clientId` is used.
  */
-const hasRole = (roles: string[], resource?: string) => {
+const hasSomeRole = (roles: string[], resource?: string) => {
   return roles.some((r) => {
+    const realmRoles = _kc.hasRealmRole(r);
+    const resourceRoles = _kc.hasResourceRole(r, resource);
+    return realmRoles || resourceRoles;
+  });
+};
+
+/**
+ * Returns true if the token has all roles provided for the domain or resource.
+ * @param roles An array of role name.
+ * @param resource If not specified, `clientId` is used.
+ */
+const hasEveryRole = (roles: string[], resource?: string) => {
+  return roles.every((r) => {
     const realmRoles = _kc.hasRealmRole(r);
     const resourceRoles = _kc.hasResourceRole(r, resource);
     return realmRoles || resourceRoles;
@@ -94,6 +107,7 @@ const hasRole = (roles: string[], resource?: string) => {
 // listener that validate authentication when single-spa navigate
 window.addEventListener("single-spa:before-routing-event", (evt) => {
   if (isLoggedIn()) {
+    console.log("PARSED_TOKEN: ", _kc.tokenParsed);
     const callback = (refreshed) => {
       if (refreshed) {
         console.log("Token was successfully refreshed");
@@ -115,7 +129,8 @@ export {
   getToken,
   updateToken,
   getUsername,
-  hasRole,
+  hasSomeRole,
+  hasEveryRole,
   hasRealmRole,
   hasResourceRole,
 };

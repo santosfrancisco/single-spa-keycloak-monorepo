@@ -5,7 +5,6 @@ import { AppProps } from "single-spa";
 import * as SC from "./styles";
 
 const { BrowserRouter, Switch, Route, Link } = Router;
-
 const Root = (props: AppProps) => {
   return (
     <BrowserRouter basename="app-a">
@@ -13,6 +12,7 @@ const Root = (props: AppProps) => {
         <Route
           exact
           path="/route-a"
+          roles={["app-a-route-a"]}
           component={({ history }) => (
             <>
               <SC.Wrapper>
@@ -22,7 +22,7 @@ const Root = (props: AppProps) => {
                 </Button>
               </SC.Wrapper>
               <Link to="/route-b">Go to /app-a/route-b</Link>
-              {hasRealmRole(["app-b-view"]) ? (
+              {hasRealmRole(["app-b-route-a"]) ? (
                 <div style={{ marginTop: 32 }}>
                   <Button
                     theme="secondary"
@@ -42,7 +42,7 @@ const Root = (props: AppProps) => {
         <Route
           exact
           path="/route-b"
-          roles={["app-a-route-b-view"]}
+          roles={["app-a-route-b"]}
           component={({ history }) => (
             <>
               <SC.Wrapper>

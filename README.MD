@@ -11,7 +11,18 @@ Poc de monorepo com Single-spa + Keycloak
 
 ## Como rodar o projeto?
 
-> Primeiro é preciso ter o Keycloak rodando e, para isso, [siga esse tutorial](https://www.keycloak.org/getting-started/getting-started-docker). Também será preciso criar duas roles de realm (`app-a-view` e `app-b-view`) e atribuir ao usuário.
+### Pré-requisitos
+
+Primeiro é preciso ter o Keycloak rodando e, para isso, [siga esse tutorial](https://www.keycloak.org/getting-started/getting-started-docker).
+
+Para esta POC criei algumas roles a nível de client:
+
+- app-a-route-a
+- app-a-route-b
+- app-b-route-a
+- app-b-route-b
+
+### Rodando localmente
 
 - Clone o projeto
 - Instale as dependências `yarn install`

@@ -1,4 +1,4 @@
-import { hasRealmRole } from "@francisco/auth";
+import { hasSomeRole } from "@francisco/auth";
 import { icons } from "@francisco/ui";
 import { List } from "@francisco/ui";
 
@@ -34,7 +34,7 @@ export const Menu = ({ items }: MenuProps) => {
       items={[itemHome, ...items].map((item) => ({
         ...item,
         renderComponent: (menuItem) => {
-          return hasRealmRole(menuItem.roles) ? (
+          return hasSomeRole(menuItem.roles) ? (
             <MenuItem item={menuItem} />
           ) : null;
         },

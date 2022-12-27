@@ -13,7 +13,7 @@ const menuItems = [
     beautyName: "APP A",
     Icon: FiGrid,
     pk: "app-a",
-    roles: ["app-a-route-a-view", "app-a-route-b-view"],
+    roles: ["app-a-route-a", "app-a-route-b"],
     subItens: [
       {
         Icon: FiStar,
@@ -21,7 +21,7 @@ const menuItems = [
         link: null,
         name: "route-a",
         routerLink: "/app-a/route-a",
-        roles: ["app-a-route-a-view"],
+        roles: ["app-a-route-a"],
       },
       {
         Icon: FiStar,
@@ -29,7 +29,7 @@ const menuItems = [
         link: null,
         name: "route-b",
         routerLink: "/app-a/route-b",
-        roles: ["app-a-route-b-view"],
+        roles: ["app-a-route-b"],
       },
     ],
   },
@@ -38,7 +38,7 @@ const menuItems = [
     beautyName: "APP B",
     Icon: FiGrid,
     pk: "app-b",
-    roles: ["app-b-route-a-view", "app-b-route-b-view"],
+    roles: ["app-b-route-a", "app-b-route-b"],
     subItens: [
       {
         Icon: FiStar,
@@ -46,7 +46,7 @@ const menuItems = [
         link: null,
         name: "route-a",
         routerLink: "/app-b/route-a",
-        roles: ["app-b-route-a-view"],
+        roles: ["app-b-route-a"],
       },
       {
         Icon: FiStar,
@@ -54,7 +54,7 @@ const menuItems = [
         link: null,
         name: "route-b",
         routerLink: "/app-b/route-b",
-        roles: ["app-b-route-b-view"],
+        roles: ["app-b-route-b"],
       },
     ],
   },

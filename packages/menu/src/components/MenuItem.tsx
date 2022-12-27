@@ -1,7 +1,7 @@
 import React from "react";
 import { navigateToUrl } from "single-spa";
 import { List, icons } from "@francisco/ui";
-import { hasRealmRole } from "@francisco/auth";
+import { hasSomeRole } from "@francisco/auth";
 import { useMenuContext } from "../contexts/menu";
 import { MenuItemType } from "./Menu";
 import * as SC from "./styles";
@@ -66,7 +66,7 @@ export const MenuItem = ({ item }) => {
             items={item.subItens.map((item) => ({
               ...item,
               renderComponent: (menuItem) => {
-                return hasRealmRole(menuItem.roles) ? (
+                return hasSomeRole(menuItem.roles) ? (
                   <MenuItem item={menuItem} />
                 ) : null;
               },

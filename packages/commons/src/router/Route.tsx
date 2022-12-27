@@ -3,7 +3,7 @@ import {
   RouteComponentProps,
   RouteProps,
 } from "react-router-dom";
-import { hasRealmRole } from "@francisco/auth";
+import { hasSomeRole } from "@francisco/auth";
 import { NotAllowed } from "./NotAllowed";
 
 type CustomRouteProps = {
@@ -11,7 +11,7 @@ type CustomRouteProps = {
 } & RouteProps;
 
 const validateRoles = ({ roles, ...rest }: CustomRouteProps) =>
-  hasRealmRole(roles) ? (
+  hasSomeRole(roles) ? (
     <RRDRoute {...rest} />
   ) : (
     <RRDRoute
